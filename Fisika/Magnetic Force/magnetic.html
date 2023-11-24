@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Força Magnética</title>
+</head>
+<body>
+
+    <script>
+        function calculateMagneticForce() {
+            // Obter os valores dos campos usando window.prompt
+            var q = parseFloat(window.prompt('Declare o valor da Carga (q):'));
+            var v = parseFloat(window.prompt('Declare a velocidade (v):'));
+            var B = parseFloat(window.prompt('Declare o campo magnético (B):'));
+            var theta = parseFloat(window.prompt('Qual o ângulo de theta(θ):'));
+
+            // Converter o ângulo para radianos
+            var thetaRadians = (Math.PI / 180) * theta;
+
+            // Calcular a força magnética usando a fórmula F = |q| * v * B * sen(θ)
+            var magneticForce = Math.abs(q) * v * B * Math.sin(thetaRadians);
+
+            // Exibir o resultado usando document.write
+            document.write('<p>A força magnética é: ' + magneticForce.toFixed(2) + ' N</p>');
+        }
+
+        // Chamar a função automaticamente para fins de demonstração
+        calculateMagneticForce();
+    </script>
+
+</body>
+</html>
